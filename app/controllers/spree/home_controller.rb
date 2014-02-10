@@ -4,8 +4,8 @@ module Spree
     respond_to :html
 
     def index
-      @searcher = build_searcher(params)
-      @products = @searcher.retrieve_products
+      # @searcher = build_searcher(params)
+      # @products = @searcher.retrieve_products
     end
   end
 end

@@ -42,7 +42,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 gem 'spree', '2.1.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
@@ -50,3 +50,6 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 
 # bootstrap frontend
 gem 'spree_bootstrap_frontend', github: '200Creative/spree_bootstrap_frontend', branch: '2-1-stable'
+
+# test spree cms
+# gem 'spree_essential_cms'

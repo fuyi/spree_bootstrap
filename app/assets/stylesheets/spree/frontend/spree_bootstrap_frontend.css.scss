@@ -1,8 +1,14 @@
 @import "bootstrap";
 
+// -- Spree Custom General ---------------------
+.round-border {
+  border-radius: 10px;
+  border: $btn-default-border 2px solid;
+}
+
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background: #1c5c92 asset-url('store/spree-header.jpg') center center;
+  background: #1c5c92 asset-url('http://dietpill-reviews.co.uk/wp-content/uploads/2013/07/veg.jpg') center center;
   background-size: cover;
   margin-bottom: $line-height-computed;
   #header {
@@ -12,11 +18,16 @@
   #logo {
     margin-bottom: 10px;
   }
+  
   .nav a {
     color: #fff;
     &:hover {
       background:rgba(9, 22, 33, 0.4);  
     }
+  }
+  
+  .nav li {
+    margin-right: 40px;
   }
   .navbar {
     border: 0;
