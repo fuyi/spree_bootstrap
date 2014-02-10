@@ -9,6 +9,14 @@ Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
+  config.max_level_in_taxons_menu = 3 # allow 3 levels of taxnomony
 end
 
 Spree.user_class = "Spree::User"
+
+#add custom routes
+Spree::Core::Engine.routes.prepend do
+  # root :to => 'pages#about_us'
+  # get '/about_us', :to => 'pages#about_us'
+  get '/contact_us', :to => "home#contact_us"
+end
