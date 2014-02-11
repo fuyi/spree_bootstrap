@@ -22,9 +22,20 @@ Spree::Core::Engine.routes.prepend do
   get '/contact_us', :to => "home#contact_us"
 end
 
-# customize searcher
+# customize searcher, add search for sku
 Spree::Core::Search::Base.class_eval do
-  def retrieve_products
-    'hijacked'
+  def get_products_conditions_for(base_scope, query)
+    fields = [:name, :description, :sku]
+    values = query.split
+
+    where_str = fields.map{|field|
+      if field == :sku
+        Array.new(values.size, "spree_variants.sku LIKE ?").join(' OR ') 
+      else
+        Array.new(values.size, "spree_products.#{field} LIKE ?").join(' OR ') 
+      end
+    }.join(' OR ')
+
+    base_scope.joins(:variants_including_master).where([where_str, values.map{|value| "%#{value}%"} * fields.size].flatten)
   end
 end
