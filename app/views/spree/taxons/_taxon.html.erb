@@ -1,3 +1,11 @@
 <div class="col-md-3 col-sm-6" data-hook="taxon">
-  <%= link_to "#{image_tag(taxon.icon.url)}".html_safe, seo_url(taxon), :class => 'thumbnail' %>
+
+  <a href="<%= seo_url(taxon) %>">
+  <div class="thumbnail">
+    <%= image_tag(taxon.icon.url)%>
+    <div class="caption post-image h5 text-center">
+      <%= taxon.name%>
+    </div>
+  </div>
+  </a>
 </div>
