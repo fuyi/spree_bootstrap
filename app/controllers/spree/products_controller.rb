@@ -7,7 +7,6 @@ module Spree
     respond_to :html
 
     def index
-      debugger
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
     end
