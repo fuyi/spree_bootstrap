@@ -1,0 +1,10 @@
+<div data-hook="taxon_products">
+  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } if @taxon.children.empty? %>
+</div>
+
+<% unless params[:keywords].present? and @taxon.children.empty?%>
+  <div>
+    <%= render :partial => 'taxon', :collection => @taxon.children %>
+  </div>
+<% end %>
+

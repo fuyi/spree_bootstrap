@@ -5,4 +5,9 @@ Spree::Taxon.class_eval do
         url: '/spree/taxons/:id/:style/:basename.:extension',
         path: ':rails_root/public/spree/taxons/:id/:style/:basename.:extension',
         default_url: '/assets/default_taxon.png'
+
+
+  def self.find_top_toxons
+    Spree::Taxon.where(:parent_id => nil)
+  end
 end

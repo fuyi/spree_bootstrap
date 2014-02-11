@@ -12,6 +12,11 @@ module Spree
       @searcher = build_searcher(params.merge(:taxon => @taxon.id))
       @products = @searcher.retrieve_products
     end
+    
+    def top_taxons
+      @top_taxons = Taxon.find_top_toxons
+      return unless @top_taxons
+    end
 
     private
 

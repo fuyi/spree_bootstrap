@@ -1,0 +1,5 @@
+<% unless params[:keywords].present? and @top_taxons.empty?%>
+  <div>
+    <%= render :partial => 'taxon', :collection => @top_taxons %>
+  </div>
+<% end %>

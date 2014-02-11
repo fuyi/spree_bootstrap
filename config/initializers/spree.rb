@@ -20,6 +20,7 @@ Spree::Core::Engine.routes.prepend do
   # root :to => 'pages#about_us'
   # get '/about_us', :to => 'pages#about_us'
   get '/contact_us', :to => "home#contact_us"
+  get '/t', to: "taxons#top_taxons"
 end
 
 # customize searcher, add search for sku
